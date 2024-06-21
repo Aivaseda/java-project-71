@@ -12,6 +12,7 @@ build/
 *.iws
 *.iml
 *.ipr
+*.cast
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/

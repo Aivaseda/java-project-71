@@ -62,9 +62,6 @@ public class App implements Callable {
         new CommandLine(new App()).execute(args);
         //System.exit(exitCode);
     }
-
-
-
-
 }
 
+// ./build/install/app/bin/app /home/paradox/JavaProject/java-project-71/app/src/main/resources/file1.json /home/paradox/JavaProject/java-project-71/app/src/main/resources/file2.json
