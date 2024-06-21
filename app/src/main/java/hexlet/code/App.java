@@ -5,6 +5,9 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.Callable;
 
 
@@ -29,8 +32,20 @@ public class App implements Callable {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        System.out.println(diff);
+        //System.out.println(getList(diff));
+        System.out.println("{");
+        getList(diff);
+        System.out.println("}");
         return null;
+    }
+    public static List<String> getList(String string) {
+        List<String> newList = new ArrayList<String>(Arrays.asList(string.split(",")));
+        newList
+                .stream()
+                .map((k) -> "  " + k)
+                //.toList();
+                .forEach(System.out::println);
+        return newList;
     }
 
 //    @Override
@@ -47,6 +62,8 @@ public class App implements Callable {
         new CommandLine(new App()).execute(args);
         //System.exit(exitCode);
     }
+
+
 
 
 }

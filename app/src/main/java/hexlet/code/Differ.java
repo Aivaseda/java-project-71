@@ -37,6 +37,7 @@ public class Differ {
         return stringOld + (pref + key + ": " + value1 + ",");
     }
 
+
     public static Map getData(String link) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         Map<?, ?> map = mapper.readValue(Paths.get(link).toFile(), Map.class);
@@ -44,4 +45,5 @@ public class Differ {
         return sortedTreeMap;
     }
 }
+
 
