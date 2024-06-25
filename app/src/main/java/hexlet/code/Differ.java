@@ -1,6 +1,8 @@
 package hexlet.code;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.File;
 import java.nio.file.Paths;
 import java.util.Map;
 import java.util.TreeMap;
@@ -38,6 +40,9 @@ public class Differ {
     }
 
     public static Map getData(String link) throws Exception {
+        File file = new File(link);
+        String absolutePath = file.getAbsolutePath();
+
         ObjectMapper mapper = new ObjectMapper();
         Map<?, ?> map = mapper.readValue(Paths.get(link).toFile(), Map.class);
         Map<?, ?> sortedTreeMap = new TreeMap<>(map);
