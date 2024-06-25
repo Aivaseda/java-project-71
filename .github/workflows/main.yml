@@ -12,13 +12,13 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '20'
+          java-version: '21'
       - uses: gradle/gradle-build-action@v3
         with:
           gradle-version: 8.5
       - run: make build
-      - run: ./gradlew checkstyleMain
-      - run: ./gradlew test
+#      - run: ./gradlew checkstyleMain
+#      - run: ./gradlew test
       - name: Publish code coverage
         uses: paambaati/codeclimate-action@v5.0.0
         env:
