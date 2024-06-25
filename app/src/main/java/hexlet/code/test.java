@@ -1,13 +1,14 @@
-////package hexlet.code;
-////
-////import com.fasterxml.jackson.databind.ObjectMapper;
-////
-////import java.nio.file.Paths;
-////import java.util.Map;
-////import java.util.TreeMap;
-////
-////public class test {
-////    public static void main(String[] args) {
+//package hexlet.code;
+//
+//import com.fasterxml.jackson.databind.ObjectMapper;
+//
+//import java.nio.file.Path;
+//import java.nio.file.Paths;
+//import java.util.Map;
+//import java.util.TreeMap;
+//
+//public class test {
+//    public static void main(String[] args) {
 ////        try {
 ////            // create object mapper instance
 ////            ObjectMapper mapper = new ObjectMapper();
@@ -23,12 +24,16 @@
 ////        } catch (Exception ex) {
 ////            ex.printStackTrace();
 ////        }
+////
+////        Map<?, ?> unsortedMap = Map.of("a", 1, "c", 3, "b", 2, "e", 5, "d", 4);
+////
+////        Map<?, ?> sortedTreeMap = new TreeMap<>(unsortedMap);
+////
+////        System.out.println(sortedTreeMap);
+//        Path resourceDirectory = Paths.get("src","test","resources");
+//        String absolutePath = resourceDirectory.toFile().getAbsolutePath();
 //
-//        Map<?, ?> unsortedMap = Map.of("a", 1, "c", 3, "b", 2, "e", 5, "d", 4);
-//
-//        Map<?, ?> sortedTreeMap = new TreeMap<>(unsortedMap);
-//
-//        System.out.println(sortedTreeMap);
+//        System.out.println(absolutePath);
 //
 //
 //    }
