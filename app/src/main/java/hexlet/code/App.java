@@ -32,6 +32,8 @@ public class App implements Callable {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        System.out.println(diff); /////
+        System.out.println();////
         System.out.println("{");
         getList(diff);
         System.out.println("}");
