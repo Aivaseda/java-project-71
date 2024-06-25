@@ -32,7 +32,6 @@ public class App implements Callable {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        //System.out.println(getList(diff));
         System.out.println("{");
         getList(diff);
         System.out.println("}");
@@ -43,25 +42,11 @@ public class App implements Callable {
         newList
                 .stream()
                 .map((k) -> "  " + k)
-                //.toList();
                 .forEach(System.out::println);
         return newList;
     }
 
-//    @Override
-//    public void run(){
-//        String diff = null;
-//        try {
-//            diff = Differ.generate(first, second);
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
-//        System.out.println(diff);
-//    }
     public static void main(String[] args) throws Exception {
         new CommandLine(new App()).execute(args);
-        //System.exit(exitCode);
     }
 }
-
-// ./build/install/app/bin/app /home/paradox/JavaProject/java-project-71/app/src/main/resources/file1.json /home/paradox/JavaProject/java-project-71/app/src/main/resources/file2.json

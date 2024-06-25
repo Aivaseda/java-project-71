@@ -14,7 +14,8 @@
 ////            ObjectMapper mapper = new ObjectMapper();
 ////
 ////            // convert JSON file to map
-////            Map<?, ?> map = mapper.readValue(Paths.get("/home/paradox/JavaProject/java-project-71/app/src/main/resources/file1.json").toFile(), Map.class);
+////            Map<?, ?> map = mapper.readValue(Paths.get("/home/paradox/JavaProject/java-project-71
+// /app/src/main/resources/file1.json").toFile(), Map.class);
 ////
 ////            // print map entries
 ////            for (Map.Entry<?, ?> entry : map.entrySet()) {
