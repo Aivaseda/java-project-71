@@ -28,3 +28,4 @@ application {
     mainClass.set("hexlet.code.App")
 }
 
+tasks.jacocoTestReport { reports { xml.required.set(true) } }
