@@ -40,11 +40,12 @@ public class Differ {
     }
 
     public static Map getData(String link) throws Exception {
-        File file = new File(link);
+        String path = link;
+        File file = new File(path);
         String absolutePath = file.getAbsolutePath();
 
         ObjectMapper mapper = new ObjectMapper();
-        Map<?, ?> map = mapper.readValue(Paths.get(link).toFile(), Map.class);
+        Map<?, ?> map = mapper.readValue(Paths.get(absolutePath).toFile(), Map.class);
         Map<?, ?> sortedTreeMap = new TreeMap<>(map);
         return sortedTreeMap;
     }
