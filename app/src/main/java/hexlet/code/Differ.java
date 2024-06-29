@@ -1,18 +1,9 @@
 package hexlet.code;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
-
-import java.io.File;
-import java.nio.file.Paths;
-import java.util.Map;
-import java.util.TreeMap;
-
-
 public class Differ {
     public static String generate(String firstLink, String secondLink) throws Exception {
-        var map1 = getData(firstLink);
-        var map2 = getData(secondLink);
+        var map1 = Parser.gerate(firstLink);
+        var map2 = Parser.gerate(secondLink);
         String newString = "";
         var keys = map1.keySet();
         var keys2 = map2.keySet();
@@ -38,23 +29,6 @@ public class Differ {
 
     private static String getSring(String stringOld, String pref, Object key, Object value1) {
         return stringOld + (pref + key + ": " + value1 + ",");
-    }
-
-    public static Map getData(String link) throws Exception {
-        String path = link;
-        File file = new File(path);
-        String absolutePath = file.getAbsolutePath();
-
-        if (link.endsWith("json")) {
-            ObjectMapper mapper = new ObjectMapper();
-            Map<?, ?> map = mapper.readValue(Paths.get(absolutePath).toFile(), Map.class);
-            return new TreeMap<>(map);
-        } else if (link.endsWith("yml")) {
-            ObjectMapper mapper = new YAMLMapper();
-            Map<?, ?> map = mapper.readValue(Paths.get(absolutePath).toFile(), Map.class);
-            return new TreeMap<>(map);
-        }
-        return Map.of();
     }
 }
 
