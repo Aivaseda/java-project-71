@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 
 import java.io.File;
 import java.nio.file.Paths;
@@ -44,10 +45,16 @@ public class Differ {
         File file = new File(path);
         String absolutePath = file.getAbsolutePath();
 
-        ObjectMapper mapper = new ObjectMapper();
-        Map<?, ?> map = mapper.readValue(Paths.get(absolutePath).toFile(), Map.class);
-        Map<?, ?> sortedTreeMap = new TreeMap<>(map);
-        return sortedTreeMap;
+        if (link.endsWith("json")) {
+            ObjectMapper mapper = new ObjectMapper();
+            Map<?, ?> map = mapper.readValue(Paths.get(absolutePath).toFile(), Map.class);
+            return new TreeMap<>(map);
+        } else if (link.endsWith("yml")) {
+            ObjectMapper mapper = new YAMLMapper();
+            Map<?, ?> map = mapper.readValue(Paths.get(absolutePath).toFile(), Map.class);
+            return new TreeMap<>(map);
+        }
+        return Map.of();
     }
 }
 
