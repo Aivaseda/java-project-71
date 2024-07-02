@@ -1,30 +1,22 @@
 package hexlet.code;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class AppTest {
-    @Test
-    public void testJSON() throws Exception {
-        String path = "src/test/resources/file1.json";
-        String path2 = "src/test/resources/file2.json";
 
-        assertEquals(Differ.generate(path, path),
-                "  follow: false,  host: hexlet.io,  proxy: 123.234.53.22,  timeout: 50");
-        assertEquals(Differ.generate(path, path2),
-                "- follow: false,  host: hexlet.io,- proxy: 123.234.53.22,- timeout: 50,+ timeout: 20,+ verbose: true");
-        assertEquals(Differ.generate(path2, path2), "  host: hexlet.io,  timeout: 20,  verbose: true");
+    private static String result;
+
+    @BeforeAll
+    public static void BeforeAll() {
+        String result = "src/test/resources/resultStylish.txt";
     }
-
     @Test
-    public void testYML() throws Exception {
-        String path = "src/test/resources/file1.yml";
-        String path2 = "src/test/resources/file2.yml";
-
-        assertEquals(Differ.generate(path, path),
-                "  follow: false,  host: hexlet.io,  proxy: 123.234.53.22,  timeout: 50");
-        assertEquals(Differ.generate(path, path2),
-                "- follow: false,  host: hexlet.io,- proxy: 123.234.53.22,- timeout: 50,+ timeout: 20,+ verbose: true");
-        assertEquals(Differ.generate(path2, path2), "  host: hexlet.io,  timeout: 20,  verbose: true");
+    public void generateTest() throws Exception {
+        String path = "src/test/resources/file1_2.json";
+        String path2 = "src/test/resources/file2_2.json";
+        //assertEquals(Differ.generate(path, path2), result );
+        assertThat(Differ.generate(path, path2)).isEqualTo(result);
     }
 }

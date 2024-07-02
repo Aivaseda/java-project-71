@@ -1,7 +1,8 @@
 package hexlet.code;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -20,7 +21,8 @@ public class Parser {
             Map<?, ?> map = mapper.readValue(Paths.get(absolutePath).toFile(), Map.class);
             return new TreeMap<>(map);
         } else if (link.endsWith("yml")) {
-            ObjectMapper mapper = new YAMLMapper();
+            //ObjectMapper mapper = new YAMLMapper();
+            ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
             Map<?, ?> map = mapper.readValue(Paths.get(absolutePath).toFile(), Map.class);
             return new TreeMap<>(map);
         }
