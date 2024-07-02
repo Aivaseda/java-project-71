@@ -26,6 +26,7 @@ public class App implements Callable {
         String result = Differ.generate(filepath1, filepath2, format);
         System.out.println(result);
         return result;
+        //./build/install/app/bin/app src/main/resources/file1.json src/main/resources/file2.json
     }
     public static void main(String[] args) throws Exception {
         new CommandLine(new App()).execute(args);

@@ -25,6 +25,6 @@ public class Stylish {
             }
         }
         stingBuild.append("}\n");
-        return stingBuild.toString();
+        return stingBuild.toString().trim();
     }
 }
