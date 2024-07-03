@@ -16,10 +16,12 @@ public class AppTest {
         return  Files.readString(Paths.get(fileName)).trim();
     }
     private static String resultStylish;
+    private static String resultPlain;
 
     @BeforeAll
     public static void beforeAll() throws Exception {
         resultStylish = readFixture("src/test/resources/fixtures/resultStylish.txt");
+        resultPlain = readFixture("src/test/resources/fixtures/resultPlain.txt");
     }
 
     @ParameterizedTest
@@ -28,5 +30,6 @@ public class AppTest {
         String filePath1 = "src/test/resources/fixtures/file1." + format;
         String filePath2 = "src/test/resources/fixtures/file2." + format;
         assertThat(Differ.generate(filePath1, filePath2)).isEqualTo(resultStylish);
+        assertThat(Differ.generate(filePath1, filePath2, "plain")).isEqualTo(resultPlain);
     }
 }
