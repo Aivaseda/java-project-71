@@ -20,4 +20,4 @@ make run-dist
 
 
 
-[![asciicast](https://asciinema.org/a/nKcwPIOZrady27N8wjfiUdIkJ.svg)](https://asciinema.org/a/nKcwPIOZrady27N8wjfiUdIkJ)
+[![asciicast](https://asciinema.org/a/zXTJ2mgyQpmCnWv7cnavLu1yX.svg)](https://asciinema.org/a/zXTJ2mgyQpmCnWv7cnavLu1yX)

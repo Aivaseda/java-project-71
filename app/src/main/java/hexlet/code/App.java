@@ -27,6 +27,7 @@ public class App implements Callable {
         System.out.println(result);
         return result;
         //./build/install/app/bin/app src/main/resources/file1.json src/main/resources/file2.json
+        // ./build/install/app/bin/app -f plain src/main/resources/file1.json src/main/resources/file2.json
     }
     public static void main(String[] args) throws Exception {
         new CommandLine(new App()).execute(args);
