@@ -25,6 +25,7 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.2"))
     testImplementation("org.assertj:assertj-core:3.22.0")
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.skyscreamer:jsonassert:1.5.0")
 }
 
 tasks.test {
