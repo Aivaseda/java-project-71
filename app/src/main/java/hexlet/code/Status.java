@@ -1,9 +1,9 @@
 package hexlet.code;
 
 public class Status {
-    private String status;
-    private Object value1;
-    private Object value2;
+    private final String status;
+    private final Object value1;
+    private final Object value2;
 
     public String getStat() {
         return status;

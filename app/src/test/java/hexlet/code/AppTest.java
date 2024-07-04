@@ -26,7 +26,6 @@ public class AppTest {
         resultPlain = readFixture("src/test/resources/fixtures/resultPlain.txt");
         resultJson = readFixture("src/test/resources/fixtures/resultJson.json");
     }
-
     @ParameterizedTest
     @ValueSource(strings = {"json", "yml"})
     public void generateTest(String format) throws Exception {
