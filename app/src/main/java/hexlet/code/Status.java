@@ -1,6 +1,6 @@
 package hexlet.code;
 
-public class Status {
+public final class Status {
     private final String status;
     private final Object value1;
     private final Object value2;
@@ -14,7 +14,6 @@ public class Status {
     public Object getValue2() {
         return value2;
     }
-
     public Status(String stat, Object value1, Object value2) {
         this.status = stat;
         this.value1 = value1;

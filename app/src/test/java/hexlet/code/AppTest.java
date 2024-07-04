@@ -12,7 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 
-public class AppTest {
+public final class AppTest {
     public static String readFixture(String fileName) throws IOException {
         return  Files.readString(Paths.get(fileName)).trim();
     }
