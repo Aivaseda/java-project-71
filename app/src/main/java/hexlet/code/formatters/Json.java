@@ -7,7 +7,7 @@ import hexlet.code.Status;
 import java.util.Map;
 
 public class Json {
-    public static String getJsonFormat(Map<String, Status> data) throws JsonProcessingException {
+    public static String format(Map<String, Status> data) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.writeValueAsString(data);
     }

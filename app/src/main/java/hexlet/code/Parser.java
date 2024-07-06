@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Parser {
-    public static Map gerate(String link) throws IOException {
+    public static Map gerateMap(String link) throws IOException {
         if (link.endsWith("json")) {
             ObjectMapper mapper = new ObjectMapper();
             Map<?, ?> map = mapper.readValue(Paths.get(link).toFile(), Map.class);

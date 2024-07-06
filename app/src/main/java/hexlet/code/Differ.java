@@ -7,10 +7,10 @@ public class Differ {
     public static String generate(String firstLink, String secondLink, String format) throws Exception {
         var firstPath = getFilePath(firstLink);
         var secondPath = getFilePath(secondLink);
-        var firstMap = DifferBuilder.differ(Parser.gerate(firstPath), Parser.gerate(secondPath));
-        var last = Formatters.createSting(firstMap, format);
+        var diff = DifferBuilder.differ(Parser.gerateMap(firstPath), Parser.gerateMap(secondPath));
+        var result = Formatters.createSting(diff, format);
 
-        return last.toString();
+        return result.toString();
     }
 
     public static String generate(String firstLink, String secondLink) throws Exception {

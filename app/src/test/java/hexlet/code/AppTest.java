@@ -31,7 +31,7 @@ public final class AppTest {
     public void generateTest(String format) throws Exception {
         String filePath1 = "src/test/resources/fixtures/file1." + format;
         String filePath2 = "src/test/resources/fixtures/file2." + format;
-        assertThat(Differ.generate(filePath1, filePath2)).isEqualTo(resultStylish);
+        assertThat(Differ.generate(filePath1, filePath2, "stylish")).isEqualTo(resultStylish);
         assertThat(Differ.generate(filePath1, filePath2, "plain")).isEqualTo(resultPlain);
 
         String actualJson = Differ.generate(filePath1, filePath2, "json");

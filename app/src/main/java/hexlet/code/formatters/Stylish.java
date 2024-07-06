@@ -5,7 +5,7 @@ import hexlet.code.Status;
 import java.util.Map;
 
 public class Stylish {
-    public static String getStylishFormat(Map<String, Status> data) {
+    public static String format(Map<String, Status> data) {
         StringBuilder stingBuild = new StringBuilder();
         stingBuild.append("{\n");
         for (String key: data.keySet()) {

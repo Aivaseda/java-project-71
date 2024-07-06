@@ -10,9 +10,9 @@ import hexlet.code.formatters.Json;
 public class Formatters {
     public static String createSting(Map<String, Status> data, String format) throws JsonProcessingException {
         return switch (format) {
-            case "stylish" -> Stylish.getStylishFormat(data);
-            case "plain" -> Plain.getPlainFormat(data);
-            case "json" -> Json.getJsonFormat(data);
+            case "stylish" -> Stylish.format(data);
+            case "plain" -> Plain.format(data);
+            case "json" -> Json.format(data);
             default -> throw new RuntimeException("unknown format: " + format);
         };
     }

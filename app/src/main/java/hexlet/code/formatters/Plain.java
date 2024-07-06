@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class Plain {
-    public static String getPlainFormat(Map<String, Status> data) {
+    public static String format(Map<String, Status> data) {
         StringBuilder stingBuild = new StringBuilder();
         Set<String> keys = data.keySet();
         for (String key: keys) {
